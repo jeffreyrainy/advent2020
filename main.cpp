@@ -13,6 +13,7 @@ int main()
 
     while(std::getline(std::cin, line))
     {
+        d.raw.push_back(line);
         line2 = "";
         auto rep = getReplacements();
 

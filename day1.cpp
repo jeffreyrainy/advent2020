@@ -14,9 +14,9 @@ void process(Data& data)
     for(int j = i + 1; j < data.lines.size(); j++)
     for(int k = j + 1; k < data.lines.size(); k++)
     {
-        long& x = data.lines[i].numbers[0];
-        long& y = data.lines[j].numbers[0];
-        long& z = data.lines[k].numbers[0];
+        auto& x = data.lines[i].numbers[0];
+        auto& y = data.lines[j].numbers[0];
+        auto& z = data.lines[k].numbers[0];
 
         if (x + y == 2020)
         {

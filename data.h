@@ -6,13 +6,14 @@ class Line
 {
 public:
     std::vector<std::string> words;
-    std::vector<long> numbers;
+    std::vector<int64_t> numbers;
 };
 
 class Data
 {
 public:
     std::vector<Line> lines;
+    std::vector<std::string> raw;
 };
 
 void process(Data& data);
