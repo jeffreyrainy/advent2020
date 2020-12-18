@@ -13,7 +13,6 @@ int main()
 
     while(std::getline(std::cin, line))
     {
-        d.raw.push_back(line);
         line2 = "";
         auto rep = getReplacements();
 
@@ -41,6 +40,7 @@ int main()
 
         }
         d.lines.push_back(l);
+        d.raw.push_back(line2);
     }
 
     process(d);
