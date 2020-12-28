@@ -148,7 +148,35 @@ void process(Data& data)
 //    slow(ring);
 //    std::cout << first << " " << prev << std::endl;
 
-    fillTo(after, 9, first, prev);
+    int x,y,z,dest, curr;
+    int limit = 1000000;
+
+    fillTo(after, limit, first, prev);
+    curr = prev;
 
 
+    for(int it = 0; it < 10000000; it++)
+    {
+        dest = curr;
+        x = after[curr];
+        y = after[x];
+        z = after[y];
+
+        dest--;
+        dest = dest ? dest : limit;
+        while (dest == x || dest == y || dest == z)
+        {
+            dest--;
+        }
+        dest = dest ? dest : limit;
+
+        int next = after[z];
+
+        after[curr] = after[z];
+        after[z] = after[dest];
+        after[dest] = x;
+        curr = next;
+    }
+
+    std::cout << (uint64_t)after[1] * after[after[1]] << std::endl;
 }
